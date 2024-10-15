@@ -1,7 +1,6 @@
 const cells = document.querySelectorAll(".cell");
 const statusText = document.querySelector("#estado");
 const restartBtn = document.querySelector("#restartBtn");
-const winLine = document.querySelector("#winLine");
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -64,7 +63,6 @@ function checkWinner(){
 
     if(roundWon){
         statusText.textContent = `Gana ${currentPlayer}!`;
-        displayWinLine(winIndex); 
         running = false;
     }
     else if(!options.includes("")){
@@ -81,63 +79,6 @@ function restartGame(){
     options = ["", "", "", "", "", "", "", "", ""];
     statusText.textContent = `Turno de ${currentPlayer}`;
     cells.forEach(cell => cell.textContent = "");
-    winLine.style.display = "none";
     running = true;
-}
-function displayWinLine(index) {
-    winLine.style.display = "block";
-
-    switch(index) {
-        case 0:
-            winLine.style.top = "40px"; 
-            winLine.style.left = "2px";
-            winLine.style.transform = "rotate(0deg)";
-            break;
-        case 1:
-            winLine.style.top = "120px"; 
-            winLine.style.left = "2px";
-            winLine.style.transform = "rotate(0deg)";
-            break;
-        case 2:
-            winLine.style.top = "200px"; 
-            winLine.style.left = "2px";
-            winLine.style.transform = "rotate(0deg)";
-            break;
-        case 3:
-            winLine.style.top = "2px";
-            winLine.style.left = "40px";
-            winLine.style.width = "5px";
-            winLine.style.height = "240px";
-            winLine.style.transform = "rotate(90deg)";
-            break;
-        case 4:
-            winLine.style.top = "2px"; 
-            winLine.style.left = "120px";
-            winLine.style.width = "5px";
-            winLine.style.height = "240px";
-            winLine.style.transform = "rotate(90deg)";
-            break;
-        case 5:
-            winLine.style.top = "2px";
-            winLine.style.left = "200px";
-            winLine.style.width = "5px";
-            winLine.style.height = "240px";
-            winLine.style.transform = "rotate(90deg)";
-            break;
-        case 6:
-            winLine.style.top = "2px"; 
-            winLine.style.left = "2px";
-            winLine.style.width = "340px";
-            winLine.style.height = "5px";
-            winLine.style.transform = "rotate(45deg)";
-            break;
-        case 7:
-            winLine.style.top = "2px";
-            winLine.style.left = "2px";
-            winLine.style.width = "340px";
-            winLine.style.height = "5px";
-            winLine.style.transform = "rotate(-45deg)";
-            break;
-    }
 }
 
