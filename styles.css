@@ -1,0 +1,43 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    box-shadow: 0 0 0 2px;
+    line-height: 80px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#gameCont {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+#cellCont {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+    position: relative;
+}
+
+#winLine {
+    position: absolute;
+    background-color: red;
+    height: 5px;
+    width: 240px; 
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    display: none;
+    transition: transform 0.5s ease;
+}
+
+#restartBtn {
+    color: yellowgreen;
+}
